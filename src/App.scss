@@ -1,0 +1,11 @@
+.app {
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  & > svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    stroke: green;
+  }
+}

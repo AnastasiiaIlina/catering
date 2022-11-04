@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 
 const config = {
@@ -8,7 +7,7 @@ const config = {
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
     module: {
         rules: [
@@ -16,14 +15,26 @@ const config = {
                 test: /\.(js|jsx)$/,
                 use: 'babel-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
             }
         ]
     },
     devServer: {
         'static': {
-            directory: './dist'
+            directory: path.join(__dirname, 'public'),
         }
-    }
+    },
 };
 
 module.exports = config;

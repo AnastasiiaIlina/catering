@@ -1,2 +1,2 @@
 # catering
-Web app for catering bussiness
+Web app for catering business
